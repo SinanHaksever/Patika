@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class dersGecme {
+    public static void main(String[] Args){
+        Scanner giris = new Scanner(System.in);
+        int avg, mat, fizik, kimya, turkce, muzik, bolum = 5;
+        
+        System.out.println("Ders notlarını giriniz.");
+        
+        System.out.print("Matematik Notu: ");
+        mat = giris.nextInt();
+        
+        System.out.print("Fizik Notu: ");
+        fizik = giris.nextInt();
+        
+        System.out.print("Kimya Notu: ");
+        kimya = giris.nextInt();
+        
+        System.out.print("Türkçe Nou: ");
+        turkce = giris.nextInt();
+        
+        System.out.print("Müzik Nou: ");
+        muzik = giris.nextInt();
+        
+        if((mat < 0) || (mat > 100)){
+            mat = 0;
+            bolum--;
+        }
+        if((fizik < 0) || (fizik > 100)){
+            fizik = 0;
+            bolum--;
+        }
+        if((kimya < 0) || (kimya > 100)){
+            kimya = 0;
+            bolum--;
+        }
+        if((turkce < 0) || (turkce > 100)){
+            turkce = 0;
+            bolum--;
+        }
+        if((muzik < 0) || (muzik > 100)){
+            muzik = 0;
+            bolum--;
+        }
+        
+        avg = (mat + fizik + kimya + turkce + muzik) / bolum;
+        if(avg >= 55){
+            System.out.println("Ortalamanız: " + avg);
+            System.out.println("Tebrikler Geçtiniz");
+        } else {
+            System.out.println("Ortalamanız: " + avg);
+            System.out.println("Kaldınız! Seneye beraberiz :)");
+        }
+    }
+}
